@@ -9,7 +9,7 @@ class Animal:
 
     @staticmethod
     def PickParent():
-        #using roulet method
+        #using ranking or tournament method
         pass
 
     @staticmethod
