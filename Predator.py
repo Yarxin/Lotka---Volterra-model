@@ -1,7 +1,8 @@
 from Animal import *
 
 class Predator(Animal):
-    def __init__(self, speed, attractiveness, gender, vitality):
+    def __init__(self, strength, speed, attractiveness, gender, vitality):
+        self.strength = strength
         self.speed = speed
         self.attractiveness = attractiveness
         self.gender = gender
@@ -10,5 +11,4 @@ class Predator(Animal):
     def Hunting(self):
         pass
 
-    def CreatePredator(self):
-        pass
+

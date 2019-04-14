@@ -1,18 +1,15 @@
-from Animal import *
-from Predator import *
-from Victim import *
-from CreatePopulations import *
-from Settings import *
-
+from CreatePopulations import CreatePredatorPopulation, CreateVictimPopulation
+from Settings import victim_population, predator_population
 #############################
 # 1) GENERATING POPULATIONS:#
 #############################
-predator_population = []
-victim_population = []
 
 predator_population = CreatePredatorPopulation(predator_population)
 victim_population = CreateVictimPopulation(victim_population)
 
+print(victim_population)
+
+#Predator.PickMaleAlphaParent(predator_population)
 #############################
 # 2) MAIN LOOP:         #####
 #############################
