@@ -1,5 +1,7 @@
-from CreatePopulations import CreatePredatorPopulation, CreateVictimPopulation
+from CreatePopulations import CreatePredatorPopulation, CreateVictimPopulation, victim_child, predator_child
 from Settings import victim_population, predator_population
+from Predator import *
+from Victim import *
 #############################
 # 1) GENERATING POPULATIONS:#
 #############################

@@ -37,8 +37,36 @@ class Animal:
         female_parent = popul_list[i]
         return female_parent
 
-
-
+    @staticmethod
+    def Hybrydization(parentMale, parentFemale, child):
+        which_parent = randint(0, 1)
+        ###
+        if (which_parent == 1):
+            child.strength = parentMale.strength
+            which_parent = randint(0, 1)
+        else:
+            child.strength = parentFemale.strength
+            which_parent = randint(0, 1)
+        ###
+        if (which_parent == 1):
+            child.speed = parentMale.speed
+            which_parent = randint(0, 1)
+        else:
+            child.speed = parentFemale.speed
+            which_parent = randint(0, 1)
+        ###
+        if (which_parent == 1):
+            child.attractiveness = parentMale.attracticeness
+            which_parent = randint(0, 1)
+        else:
+            child.attractiveness = parentFemale.attractiveness
+            which_parent = randint(0, 1)
+        ###
+        if (which_parent == 1):
+            child.gender = parentMale.gender
+        else:
+            child.gender = parentFemale.gender
+        return child
 
     @staticmethod
     def Mutation(child):
