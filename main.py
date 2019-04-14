@@ -7,9 +7,6 @@ from Settings import victim_population, predator_population
 predator_population = CreatePredatorPopulation(predator_population)
 victim_population = CreateVictimPopulation(victim_population)
 
-print(victim_population)
-
-#Predator.PickMaleAlphaParent(predator_population)
 #############################
 # 2) MAIN LOOP:         #####
 #############################

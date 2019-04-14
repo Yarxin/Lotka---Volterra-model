@@ -38,9 +38,7 @@ class Animal:
         return female_parent
 
 
-    @staticmethod
-    def Hybrydization(parentMale, parentFemale):
-        pass
+
 
     @staticmethod
     def Mutation(child):

@@ -13,7 +13,7 @@ def GeneratePredator():
     pred_gender = randint(0, 1)
     pred_vitality = randint(1, 3)
 
-    predator = Predator(pred_strength, pred_speed, pred_attractiveness, pred_gender, pred_vitality)
+    predator = Predator(pred_strength, pred_speed, pred_attractiveness, pred_gender)
     return predator
 
 def CreatePredatorPopulation(pred_list):
@@ -33,7 +33,7 @@ def GenerateVictim():
     vict_gender = randint(0, 1)
     vict_satiety = VICTIM_QUANTITY/AREA
 
-    victim = Victim(vict_strength, vict_speed, vict_attractiveness, vict_gender, vict_satiety)
+    victim = Victim(vict_strength, vict_speed, vict_attractiveness, vict_gender)
     return victim
 
 def CreateVictimPopulation(vict_list):
