@@ -2,8 +2,7 @@ from Animal import *
 
 class Victim(Animal):
 
-    def __init__(self, hp, speed, attractiveness, gender, satiety):
-        self.hp = hp
+    def __init__(self, speed, attractiveness, gender, satiety):
         self.speed = speed
         self.attractiveness = attractiveness
         self.gender = gender
