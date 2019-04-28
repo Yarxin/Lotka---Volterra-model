@@ -2,6 +2,7 @@ import numpy as np
 from Settings import victim_population, predator_population
 from operator import attrgetter
 from random import *
+import random
 
 class Animal:
     def __init__(self, strength, speed, attractiveness, gender):
@@ -15,8 +16,8 @@ class Animal:
         ###using ranking method###
         sorted(popul_list, key=attrgetter('strength'))
         for index, individual in enumerate(popul_list):
-            if(individual[index].gender == 1):
-                alpha_male = individual[index]
+            if(individual.gender == 1):
+                alpha_male = popul_list[index]
         return alpha_male
 
     @staticmethod
@@ -24,17 +25,17 @@ class Animal:
         ###using rulet method###
         adaptation_sum = 0
         end_condition = 0
-        rulet_field = randint(1, 10)
-        for index, individual in popul_list:
+        for individual in popul_list:
             if(individual.gender == 0):
                 adaptation_sum += individual.strength
-        end_condition = randint(1, adaptation_sum)
+
         i = 0
-        while(end_condition <= rulet_field):
+        rulet_field = random.uniform(0, adaptation_sum)
+        while(end_condition < rulet_field):
             if(popul_list[i].gender == 0):
                 end_condition += popul_list[i].strength
             i += 1
-        female_parent = popul_list[i]
+        female_parent = popul_list[i -1]
         return female_parent
 
     @staticmethod
@@ -56,7 +57,7 @@ class Animal:
             which_parent = randint(0, 1)
         ###
         if (which_parent == 1):
-            child.attractiveness = parentMale.attracticeness
+            child.attractiveness = parentMale.attractiveness
             which_parent = randint(0, 1)
         else:
             child.attractiveness = parentFemale.attractiveness

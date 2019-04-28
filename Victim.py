@@ -9,7 +9,7 @@ class Victim(Animal):
 
     def Hide(self):
         hide_prob = randint(1, 10)
-        if(hide_prob >= 7):
+        if(hide_prob >= 2):
             return True
         else:
             return False
