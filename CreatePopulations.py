@@ -3,6 +3,11 @@ from Victim import *
 from random import *
 from Settings import *
 
+###########CHILDREN########
+
+predator_child = Predator(0, 0, 0, 0)
+victim_child = Victim(0, 0, 0, 0)
+
 ############
 # PREDATORS#
 ############
@@ -42,9 +47,3 @@ def CreateVictimPopulation(vict_list):
         vict_list.append(GenerateVictim())
         vict_iterator += 1
     return vict_list
-
-
-###########CHILDREN########
-
-predator_child = Predator(0, 0, 0, 0)
-victim_child = Victim(0, 0, 0, 0)

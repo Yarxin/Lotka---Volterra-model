@@ -8,4 +8,8 @@ class Victim(Animal):
         self.gender = gender
 
     def Hide(self):
-        pass
+        hide_prob = randint(1, 10)
+        if(hide_prob >= 7):
+            return True
+        else:
+            return False

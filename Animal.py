@@ -70,8 +70,25 @@ class Animal:
 
     @staticmethod
     def Mutation(child):
-        pass
+        mut_prob = randint(1, 3)
+        up_margin = 0.6
+        down_margin = 1.7
+        mutation = random.uniform(up_margin, down_margin)
+        if(mut_prob == 3):
+            mut_prob = randint(1, 3)
+            if(mut_prob == 1):
+                child.strength = child.strength * mutation
+            elif(mut_prob == 2):
+                child.speed = child.speed * mutation
+            else:
+                child.attractiveness = child.attractiveness * mutation
+        #Płeć nie podlega mutacji. Zazwyczaj nie podlega :/
 
-    def Die(self):
-        pass
+    @staticmethod
+    def Die(anim_list, individual):
+        anim_list.remove(individual)
+
+        #anim_list - lista z populacją ofiar lub drapieżników
+
+        #individual - osobnik do usunięcia z populacji
 
