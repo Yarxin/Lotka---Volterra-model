@@ -5,8 +5,8 @@ from Settings import *
 
 ###########CHILDREN########
 
-predator_child = Predator(0, 0, 0, 0)
-victim_child = Victim(0, 0, 0, 0)
+predator_child = Predator(0, 0, 0, 0, 0)
+victim_child = Victim(0, 0, 0, 0, 0)
 
 ############
 # PREDATORS#
@@ -16,8 +16,9 @@ def GeneratePredator():
     pred_speed = randint(1, 10)
     pred_attractiveness = randint(1, 5)
     pred_gender = randint(0, 1)
+    pred_age = randint(1, 8)
 
-    predator = Predator(pred_strength, pred_speed, pred_attractiveness, pred_gender)
+    predator = Predator(pred_strength, pred_speed, pred_attractiveness, pred_gender, pred_age)
     return predator
 
 def CreatePredatorPopulation(pred_list):
@@ -35,8 +36,9 @@ def GenerateVictim():
     vict_speed = randint(1, 10)
     vict_attractiveness = randint(1, 5)
     vict_gender = randint(0, 1)
+    vict_age = randint(1, 8)
 
-    victim = Victim(vict_strength, vict_speed, vict_attractiveness, vict_gender)
+    victim = Victim(vict_strength, vict_speed, vict_attractiveness, vict_gender, vict_age)
     return victim
 
 def CreateVictimPopulation(vict_list):

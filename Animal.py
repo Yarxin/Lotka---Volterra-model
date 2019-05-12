@@ -5,7 +5,7 @@ from random import *
 import random
 
 class Animal:
-    def __init__(self, strength, speed, attractiveness, gender):
+    def __init__(self, strength, speed, attractiveness, gender, age):
         self.strength = strength
         self.speed = speed
         self.attractiveness = attractiveness
@@ -18,7 +18,11 @@ class Animal:
         for index, individual in enumerate(popul_list):
             if(individual.gender == 1):
                 alpha_male = popul_list[index]
+                break
+            else:
+                alpha_male = popul_list[0]
         return alpha_male
+
 
     @staticmethod
     def PickFemaleParent(popul_list):

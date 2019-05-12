@@ -1,4 +1,4 @@
-VICTIM_QUANTITY = 100
+VICTIM_QUANTITY = 110
 PREDATOR_QUANTITY = 5
 
 predator_population = []
@@ -9,7 +9,7 @@ AREA = 300
 ### satiety mark, to prevent
 ### victim population's overpopulation
 SATIETY = AREA/VICTIM_QUANTITY
-MIN_SATIETY = 1.5
+MIN_SATIETY = 1
 
 
 ### vitality mark, which says
@@ -20,5 +20,5 @@ VITALITY = 3
 ### od simulation. The number is
 ### multiplicated by 365
 
-YEARS = 1000
+YEARS = 50
 DAYS = YEARS * 365

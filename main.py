@@ -36,10 +36,7 @@ while(i <= DAYS):
     if(len(victim_population) == 0):
         print('All victims are dead.')
     # Checking if there is no overpopulation of victims.
-    victim_satiety = AREA / len(victim_population)
-    if(victim_satiety < MIN_SATIETY):
-        wheel_of_fortune = randint(0, len(victim_population) - 1)
-        Animal.Die(victim_population, victim_population[wheel_of_fortune])
+    #victim_satiety = AREA / len(victim_population)
 
     # Killing predators when the hunting goes bad :/
     predator_vitality = VITALITY
@@ -48,11 +45,25 @@ while(i <= DAYS):
         Animal.Die((predator_population, predator_population[wheel_of_fortune]))
 
     # Hunting time >:) once for every three days.
-    if((i % 15) == 0):
-        predator_vitality = Predator.Hunting(predator_vitality, victim_population)
-
+    if((i % 3) == 0):
+        if(len(predator_population) > 5):
+            hunt = 0
+            while (hunt <= 2):
+                predator_vitality = Predator.Hunting(predator_vitality, victim_population)
+                hunt += 1
+        else:
+            predator_vitality = Predator.Hunting(predator_vitality, victim_population)
     # Procreation once a year.
     if((i % 365) == 0):
+        for victim in victim_population:
+            victim.age += 1
+            if(victim.age == 6):
+                Animal.Die(victim_population, victim)
+
+        for predator in predator_population:
+            predator.age += 1
+            if(predator.age == 8):
+                Animal.Die(predator_population, predator)
         # How many children in victim population do we welcome this year?
         procreation_iterator = 0
         wheel_of_fortune = randint(1, 15)
@@ -75,8 +86,23 @@ while(i <= DAYS):
 
             predator_newborn = Animal.Hybrydization(predator_male_parent, predator_female_parent, predator_child)
             Animal.Mutation(victim_newborn)
+            wheel_of_fortune = randint(1, 5)
             predator_population.append(predator_newborn)
+            if (wheel_of_fortune != 5):
+                Animal.Die(predator_population, predator_newborn)
             procreation_iterator += 1
+
+        if(len(predator_population) > 10):
+            go_away = 0
+            while(len(predator_population) > 5):
+                go_away = randint(0, len(predator_population) - 1)
+                Animal.Die(predator_population, predator_population[go_away])
+
+        victim_border = 120
+        if (len(victim_population) >= victim_border):
+            while (len(victim_population) >= (victim_border - 10)):
+                wheel_of_fortune = randint(0, len(victim_population) - 1)
+                Animal.Die(victim_population, victim_population[wheel_of_fortune])
 
         # preparing statistics
         current_year_predator_quantity = len(predator_population)
@@ -90,8 +116,13 @@ while(i <= DAYS):
 
 
     i += 1
-plt.plot(years, predator_statistics)
-plt.plot(years, victim_statistics)
+plt.plot(years, predator_statistics, label='drapieżnicy')
+plt.plot(years, victim_statistics, label='ofiary')
+plt.grid(color='black', linestyle='-', linewidth=0.2)
+plt.xlabel('Czas [lata]')
+plt.ylabel('Liczebność populacji')
+plt.title('Przebieg zmian liczebnosci ofiar i drapieżników w funkcji czasu')
+plt.legend()
 plt.show()
 
 

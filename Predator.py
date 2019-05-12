@@ -2,11 +2,12 @@ from Animal import *
 from Settings import victim_population, predator_population
 
 class Predator(Animal):
-    def __init__(self, strength, speed, attractiveness, gender):
+    def __init__(self, strength, speed, attractiveness, gender, age):
         self.strength = strength
         self.speed = speed
         self.attractiveness = attractiveness
         self.gender = gender
+        self.age = age
 
     @staticmethod
     def Hunting(vitality, vict_popul):
@@ -19,7 +20,7 @@ class Predator(Animal):
         alpha_predator = list_of_strength[0]
         if(alpha_predator.speed > victim.speed):
             hidden_victim = victim.Hide()
-            if(alpha_mistake <= 3):
+            if(alpha_mistake >= 4):
                 vitality -= 1
                 return vitality
             elif(hidden_victim == True):
@@ -27,7 +28,7 @@ class Predator(Animal):
                 return vitality
             else:
                 Animal.Die(victim_population, victim)
-                vitality = 3
+                vitality += 1
                 return vitality
         else:
             vitality -= 1
