@@ -36,7 +36,7 @@ def GenerateVictim():
     vict_speed = randint(1, 10)
     vict_attractiveness = randint(1, 5)
     vict_gender = randint(0, 1)
-    vict_age = randint(1, 8)
+    vict_age = randint(1, 6)
 
     victim = Victim(vict_strength, vict_speed, vict_attractiveness, vict_gender, vict_age)
     return victim

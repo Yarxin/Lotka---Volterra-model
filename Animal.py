@@ -20,7 +20,9 @@ class Animal:
                 alpha_male = popul_list[index]
                 break
             else:
-                alpha_male = popul_list[0]
+                gender_corector = randint(0, len(popul_list) - 1)
+                popul_list[gender_corector].gender = 1
+                alpha_male = popul_list[gender_corector]
         return alpha_male
 
 
@@ -31,13 +33,13 @@ class Animal:
         end_condition = 0
         for individual in popul_list:
             if(individual.gender == 0):
-                adaptation_sum += individual.strength
+                adaptation_sum += individual.attractiveness
 
         i = 0
         rulet_field = random.uniform(0, adaptation_sum)
         while(end_condition < rulet_field):
             if(popul_list[i].gender == 0):
-                end_condition += popul_list[i].strength
+                end_condition += popul_list[i].attractiveness
             i += 1
         female_parent = popul_list[i -1]
         return female_parent
@@ -75,11 +77,11 @@ class Animal:
 
     @staticmethod
     def Mutation(child):
-        mut_prob = randint(1, 3)
+        mut_prob = randint(1, 10)
         up_margin = 0.6
         down_margin = 1.7
         mutation = random.uniform(up_margin, down_margin)
-        if(mut_prob == 3):
+        if(mut_prob == 1):
             mut_prob = randint(1, 3)
             if(mut_prob == 1):
                 child.strength = child.strength * mutation

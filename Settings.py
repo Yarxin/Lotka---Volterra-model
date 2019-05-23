@@ -1,5 +1,5 @@
 VICTIM_QUANTITY = 110
-PREDATOR_QUANTITY = 5
+PREDATOR_QUANTITY = 7
 
 predator_population = []
 victim_population = []
