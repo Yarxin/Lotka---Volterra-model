@@ -4,8 +4,9 @@
     <list default="true" id="85e9fa63-f173-4482-9528-3feaa59ab344" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Animal.py" beforeDir="false" afterPath="$PROJECT_DIR$/Animal.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CreatePopulations.py" beforeDir="false" afterPath="$PROJECT_DIR$/CreatePopulations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Predator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Predator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Victim.py" beforeDir="false" afterPath="$PROJECT_DIR$/Victim.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,15 +19,18 @@
     <session id="1832688765">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="15" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.23" value="1" />
-          <entry key="project.open.time.25" value="2" />
+          <entry key="project.open.time.24" value="1" />
+          <entry key="project.open.time.25" value="4" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.31" value="2" />
+          <entry key="project.open.time.32" value="1" />
+          <entry key="project.open.time.33" value="1" />
           <entry key="project.open.time.4" value="4" />
           <entry key="project.open.time.49" value="1" />
-          <entry key="project.opened" value="12" />
+          <entry key="project.opened" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -41,12 +45,12 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="11352" />
+          <entry key="py" value="12299" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="11352" />
+          <entry key="Python" value="12299" />
         </counts>
       </usages-collector>
     </session>
@@ -56,11 +60,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="120" column="67" lean-forward="true" selection-start-line="120" selection-start-column="67" selection-end-line="120" selection-end-column="67" />
+            <state relative-caret-position="144">
+              <caret line="138" column="58" selection-start-line="138" selection-start-column="58" selection-end-line="138" selection-end-column="58" />
               <folding>
-                <element signature="e#0#108#0" expanded="true" />
-                <marker date="1558629492027" expanded="true" signature="337:338" ph="..." />
+                <element signature="e#0#126#0" expanded="true" />
+                <marker date="1560000041162" expanded="true" signature="355:356" ph="..." />
               </folding>
             </state>
           </provider>
@@ -69,16 +73,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Animal.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="1018">
+              <caret line="83" selection-start-line="83" selection-end-line="83" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
-                <marker date="1558626705468" expanded="true" signature="160:161" ph="..." />
-                <marker date="1558626705468" expanded="true" signature="160:165" ph="..." />
-                <marker date="1558626705468" expanded="true" signature="424:433" ph="..." />
-                <marker date="1558626705468" expanded="true" signature="959:968" ph="..." />
-                <marker date="1558626705468" expanded="true" signature="2507:2513" ph="..." />
-                <marker date="1558626705468" expanded="true" signature="2551:3106" ph="..." />
+                <marker date="1559146949715" expanded="true" signature="172:173" ph="..." />
+                <marker date="1559146949715" expanded="true" signature="172:177" ph="..." />
+                <marker date="1559146949715" expanded="true" signature="436:445" ph="..." />
+                <marker date="1559146949715" expanded="true" signature="971:980" ph="..." />
+                <marker date="1559146949715" expanded="true" signature="2562:2568" ph="..." />
+                <marker date="1559146949715" expanded="true" signature="2606:2615" ph="..." />
               </folding>
             </state>
           </provider>
@@ -87,10 +91,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Victim.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+            <state relative-caret-position="228">
+              <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
               <folding>
-                <marker date="1557589413605" expanded="true" signature="43:48" ph="..." />
+                <marker date="1559152439075" expanded="true" signature="43:48" ph="..." />
               </folding>
             </state>
           </provider>
@@ -99,36 +103,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Predator.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
+            <state relative-caret-position="570">
               <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
-                <marker date="1557594913193" expanded="true" signature="105:110" ph="..." />
+                <marker date="1559582073038" expanded="true" signature="105:110" ph="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CreatePopulations.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-                <marker date="1558629541599" expanded="true" signature="585:782" ph="..." />
-                <marker date="1558629541599" expanded="true" signature="838:843" ph="..." />
-                <marker date="1558629541599" expanded="true" signature="1121:1259" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -148,13 +128,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Victim.py" />
-        <option value="$PROJECT_DIR$/Predator.py" />
         <option value="$PROJECT_DIR$/GUI.py" />
         <option value="$PROJECT_DIR$/Animal.py" />
-        <option value="$PROJECT_DIR$/Settings.py" />
-        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/Victim.py" />
         <option value="$PROJECT_DIR$/CreatePopulations.py" />
+        <option value="$PROJECT_DIR$/Settings.py" />
+        <option value="$PROJECT_DIR$/Predator.py" />
+        <option value="$PROJECT_DIR$/main.py" />
       </list>
     </option>
   </component>
@@ -247,7 +227,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32907802" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -340,77 +320,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GUI.py">
+    <entry file="file://$PROJECT_DIR$/GUI.py" />
+    <entry file="file://$PROJECT_DIR$/Settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="59" column="29" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
+        <state relative-caret-position="304">
+          <caret line="16" column="12" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Settings.py">
+    <entry file="file://$PROJECT_DIR$/CreatePopulations.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+        <state relative-caret-position="760">
+          <caret line="40" column="70" selection-start-line="40" selection-start-column="70" selection-end-line="40" selection-end-column="70" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+            <marker date="1559152831873" expanded="true" signature="585:782" ph="..." />
+            <marker date="1559152831873" expanded="true" signature="838:843" ph="..." />
+            <marker date="1559152831873" expanded="true" signature="1121:1259" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Predator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
+        <state relative-caret-position="570">
           <caret line="30" column="29" selection-start-line="30" selection-start-column="29" selection-end-line="30" selection-end-column="29" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
-            <marker date="1557594913193" expanded="true" signature="105:110" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Victim.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-          <folding>
-            <marker date="1557589413605" expanded="true" signature="43:48" ph="..." />
+            <marker date="1559582073038" expanded="true" signature="105:110" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Animal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="1018">
+          <caret line="83" selection-start-line="83" selection-end-line="83" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <marker date="1558626705468" expanded="true" signature="160:161" ph="..." />
-            <marker date="1558626705468" expanded="true" signature="160:165" ph="..." />
-            <marker date="1558626705468" expanded="true" signature="424:433" ph="..." />
-            <marker date="1558626705468" expanded="true" signature="959:968" ph="..." />
-            <marker date="1558626705468" expanded="true" signature="2507:2513" ph="..." />
-            <marker date="1558626705468" expanded="true" signature="2551:3106" ph="..." />
+            <marker date="1559146949715" expanded="true" signature="172:173" ph="..." />
+            <marker date="1559146949715" expanded="true" signature="172:177" ph="..." />
+            <marker date="1559146949715" expanded="true" signature="436:445" ph="..." />
+            <marker date="1559146949715" expanded="true" signature="971:980" ph="..." />
+            <marker date="1559146949715" expanded="true" signature="2562:2568" ph="..." />
+            <marker date="1559146949715" expanded="true" signature="2606:2615" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CreatePopulations.py">
+    <entry file="file://$PROJECT_DIR$/Victim.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+        <state relative-caret-position="228">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
-            <marker date="1558629541599" expanded="true" signature="585:782" ph="..." />
-            <marker date="1558629541599" expanded="true" signature="838:843" ph="..." />
-            <marker date="1558629541599" expanded="true" signature="1121:1259" ph="..." />
+            <marker date="1559152439075" expanded="true" signature="43:48" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="120" column="67" lean-forward="true" selection-start-line="120" selection-start-column="67" selection-end-line="120" selection-end-column="67" />
+        <state relative-caret-position="144">
+          <caret line="138" column="58" selection-start-line="138" selection-start-column="58" selection-end-line="138" selection-end-column="58" />
           <folding>
-            <element signature="e#0#108#0" expanded="true" />
-            <marker date="1558629492027" expanded="true" signature="337:338" ph="..." />
+            <element signature="e#0#126#0" expanded="true" />
+            <marker date="1560000041162" expanded="true" signature="355:356" ph="..." />
           </folding>
         </state>
       </provider>

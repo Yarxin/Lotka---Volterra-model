@@ -20,7 +20,7 @@ class Predator(Animal):
         alpha_predator = list_of_strength[0]
         if(alpha_predator.speed > victim.speed):
             hidden_victim = victim.Hide()
-            if(alpha_mistake >= 4):
+            if(alpha_mistake >= 8):
                 vitality -= 1
                 return vitality
             elif(hidden_victim == True):
@@ -28,7 +28,8 @@ class Predator(Animal):
                 return vitality
             else:
                 Animal.Die(victim_population, victim)
-                vitality += 1
+                vitality += 6
+                print('Polowanie udane')
                 return vitality
         else:
             vitality -= 1

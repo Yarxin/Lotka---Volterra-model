@@ -1,4 +1,4 @@
-from CreatePopulations import CreatePredatorPopulation, CreateVictimPopulation, victim_child, predator_child
+from CreatePopulations import CreatePredatorPopulation, CreateVictimPopulation, victim_child, predator_child, GeneratePredator
 from Settings import victim_population, predator_population, DAYS, SATIETY, MIN_SATIETY, VITALITY, AREA, PREDATOR_QUANTITY, VICTIM_QUANTITY, YEARS
 from Predator import *
 from Victim import *
@@ -32,6 +32,8 @@ years = []
 timeline = 0
 years.append(timeline)
 
+predator_vitality = VITALITY
+
 #############################
 # 2) MAIN LOOP:         #####
 #############################
@@ -39,7 +41,8 @@ i = 0
 wheel_of_fortune = 0
 
 while(i <= DAYS):
-
+    print(i)
+    environment_resistance = len(victim_population) / AREA
     if(len(predator_population) == 0):
         print('All predators are dead.')
         break
@@ -49,19 +52,25 @@ while(i <= DAYS):
     #victim_satiety = AREA / len(victim_population)
 
     # Killing predators when the hunting goes bad :/
-    predator_vitality = VITALITY
-    if(VITALITY == 0):
+    # predator_vitality = VITALITY
+    if(predator_vitality == 0):
         wheel_of_fortune = randint(0, len(predator_population) - 1)
-        Animal.Die((predator_population, predator_population[wheel_of_fortune]))
+        Animal.Die(predator_population, predator_population[wheel_of_fortune])
 
-    # Hunting time >:) once for every three days.
-    if((i % 3) == 0):
-        if(len(predator_population) > 5):
-            hunt = 0
-            while (hunt <= 2):
+    # Hunting time >:)
+    # Need to check if there are proper quantity of victims
+    if(environment_resistance < 0.5):
+        # if it is:
+        if((i % 3) == 0):
+            if(len(predator_population) > 5):
+                hunt = 0
+                while (hunt <= 2):
+                    predator_vitality = Predator.Hunting(predator_vitality, victim_population)
+                    hunt += 1
+            else:
                 predator_vitality = Predator.Hunting(predator_vitality, victim_population)
-                hunt += 1
-        else:
+    else:
+        for pred in predator_population:
             predator_vitality = Predator.Hunting(predator_vitality, victim_population)
 
     if((i % 365) == 0):
@@ -81,10 +90,22 @@ while(i <= DAYS):
         # How many children in victim population do we welcome this year?
         # 1 - 15 real numbers of children in Stag's population.
         procreation_iterator = 0
-        wheel_of_fortune = randint(1, 15)
+        # environment_resistance = len(victim_population) / AREA
 
+        if(environment_resistance < 0.5):
+            wheel_of_fortune = randint(1, 15)
+            # print('rozmnażanie wariant A')
+        # but if it's getting to much of victims?
+        else:
+            # wheel_of_fortune = randint(1, 2)
+            wheel_of_fortune = 0
+            # print('rozmnażanie wariant B')
+
+        #To procreate Stags, we need to point the Daddy
         victim_male_parent = Animal.PickMaleAlphaParent(victim_population)
-        while(procreation_iterator <= wheel_of_fortune):
+
+        while(procreation_iterator < wheel_of_fortune):
+            #and mommy
             victim_female_parent = Animal.PickFemaleParent(victim_population)
 
             victim_newborn = Animal.Hybrydization(victim_male_parent, victim_female_parent, victim_child)
@@ -114,13 +135,8 @@ while(i <= DAYS):
             while(len(predator_population) > 5):
                 go_away = randint(0, len(predator_population) - 1)
                 Animal.Die(predator_population, predator_population[go_away])
-
-
-        victim_border = 120
-        if (len(victim_population) >= victim_border):
-            while (len(victim_population) >= (victim_border - 10)):
-                wheel_of_fortune = randint(0, len(victim_population) - 1)
-                Animal.Die(victim_population, victim_population[wheel_of_fortune])
+            # WELCOME NEW ONE FROM FAR FAR AWAY
+            predator_population.append(GeneratePredator())
 
         # preparing statistics
         current_year_predator_quantity = len(predator_population)
@@ -145,8 +161,11 @@ while(i <= DAYS):
 
         years.append(timeline)
 
-
+        # print('Liczebność populacji ofiar:' + str(len(victim_population)))
+        # print('Obszar' + str(AREA))
+        # print('opór środowiska = ' + str(environment_resistance))
     i += 1
+
 plt.plot(years, predator_statistics, label='drapieżnicy')
 plt.plot(years, victim_statistics, label='ofiary')
 plt.grid(color='black', linestyle='-', linewidth=0.2)
@@ -170,8 +189,3 @@ plt.xlabel('Czas [lata]')
 plt.ylabel('wartość średniego przystosowania')
 plt.title('Funkcja przystosowania średniego cechy ofiar: prędkość')
 plt.show()
-
-
-# TO DO:
-# ADD AGE TO PREDATORS AND START KILLING THE OLDEST
-# ONE VICTIM CAN'T GIVE VITALITY TO MORE THAN  7 PREDATORS

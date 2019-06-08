@@ -14,7 +14,7 @@ MIN_SATIETY = 1
 
 ### vitality mark, which says
 ### about hunting failure
-VITALITY = 3
+VITALITY = 6
 
 ### years, the number of years
 ### od simulation. The number is

@@ -3,6 +3,7 @@ from Settings import victim_population, predator_population
 from operator import attrgetter
 from random import *
 import random
+import copy
 
 class Animal:
     def __init__(self, strength, speed, attractiveness, gender, age):
@@ -31,6 +32,7 @@ class Animal:
         ###using rulet method###
         adaptation_sum = 0
         end_condition = 0
+        work_popul = copy.copy(popul_list)
         for individual in popul_list:
             if(individual.gender == 0):
                 adaptation_sum += individual.attractiveness
@@ -38,10 +40,10 @@ class Animal:
         i = 0
         rulet_field = random.uniform(0, adaptation_sum)
         while(end_condition < rulet_field):
-            if(popul_list[i].gender == 0):
-                end_condition += popul_list[i].attractiveness
+            if(work_popul[i].gender == 0):
+                end_condition += work_popul[i].attractiveness
             i += 1
-        female_parent = popul_list[i -1]
+        female_parent = work_popul[i -1]
         return female_parent
 
     @staticmethod
@@ -77,7 +79,8 @@ class Animal:
 
     @staticmethod
     def Mutation(child):
-        mut_prob = randint(1, 10)
+        #Chances as big as scientific literature says
+        mut_prob = randint(1, 100)
         up_margin = 0.6
         down_margin = 1.7
         mutation = random.uniform(up_margin, down_margin)
@@ -89,8 +92,7 @@ class Animal:
                 child.speed = child.speed * mutation
             else:
                 child.attractiveness = child.attractiveness * mutation
-        #Płeć nie podlega mutacji. Zazwyczaj nie podlega :/
-
+        #Gender doesn't mutate. Generally it doesn't :/
     @staticmethod
     def Die(anim_list, individual):
         anim_list.remove(individual)
